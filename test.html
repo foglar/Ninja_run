@@ -5,33 +5,34 @@
   </head>
   <body>
     <script>
+      //KONSTANTY
+      var CANVAS_WIDTH = 800;
+      var CANVAS_HEIGHT = 600;
+      var NANONAUT_WIDTH = 181;
+      var NANONAUT_HEIGHT = 229;
+      var ZEME_Y = 540;
+      //NASTAVENÍ
       var canvas = document.createElement('canvas');
-      canvas.width = 800;
-      canvas.height = 600;
+      var c = canvas.getContext('2d')
+      canvas.width = CANVAS_WIDTH;
+      canvas.height = CANVAS_HEIGHT;
       document.body.appendChild(canvas);
-      var c = canvas.getContext('2d');
-      var image = new Image();
-      image.src = 'animatedNanonaut.svg';
-      var x = 0;
-      var y = 40;
+      
+      var nanonautImage = new Image();
+      nanonautImage.src = 'animatedNanonaut.svg';
+      
+      var nanonautX = 50;
+      var nanonautY = 40;
       
       window.addEventListener('load', start);
       
       function start() {
-      window.requestAnimationFrame(loop);
-      c.fillStyle = 'green';
-      c.fillRect(10, 10, 30, 30);
-      c.drawImage(image, 20, 40);
-      document.body.appendChild(canvas);
+        window.requestAnimationFrame(mainLoop);
       }
-      
-      function loop() {
-        c.clearRect(0, 0, 800, 600);
-        c.drawImage(image, x, y)
-        x = x + 1;
-        
-        window.requestAnimationFrame(loop);
-      }
+      //HLAVNí SMYČKA
+      //REAKCE HRÁČE
+      //AKTUALIZACE
+      //ZOBRAZENÍ
     </script>
   </body>
 </html>
