@@ -13,7 +13,7 @@
       var ZEME_Y = 540;
       //NASTAVENÍ
       var canvas = document.createElement('canvas');
-      var c = canvas.getContext('2d')
+      var c = canvas.getContext('2d');
       canvas.width = CANVAS_WIDTH;
       canvas.height = CANVAS_HEIGHT;
       document.body.appendChild(canvas);
@@ -30,7 +30,7 @@
         window.requestAnimationFrame(mainLoop);
       }
       //HLAVNí SMYČKA
-      function mainloop() {
+      function mainLoop() {
         update();
         draw();
         window.requestAnimationFrame(mainLoop);
@@ -45,6 +45,10 @@
         
         //ZOBRAZENÍ NANONAUTA
         c.drawImage(nanonautImage, nanonautX, nanonautY);
+        
+        //ZOBRAZENÍ OBLOHY
+        c.fillStyle = 'LightSkyBlue';
+        c.
       }
     </script>
   </body>
