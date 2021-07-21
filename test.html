@@ -30,9 +30,22 @@
         window.requestAnimationFrame(mainLoop);
       }
       //HLAVNí SMYČKA
+      function mainloop() {
+        update();
+        draw();
+        window.requestAnimationFrame(mainLoop);
+      }
       //REAKCE HRÁČE
       //AKTUALIZACE
+      function update() {
+      }
       //ZOBRAZENÍ
+      function draw() {
+        c.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        
+        //ZOBRAZENÍ NANONAUTA
+        c.drawImage(nanonautImage, nanonautX, nanonautY);
+      }
     </script>
   </body>
 </html>
