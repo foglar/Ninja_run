@@ -48,6 +48,10 @@
         
         //ZOBRAZENÍ OBLOHY
         c.fillStyle = 'LightSkyBlue';
+        c.fillRect(0, 0, CANVAS_WIDTH, ZEME_Y - 40);
+        
+        //ZOBRAZENÍ ZEMĚ
+        c.fillStyle = 'ForestGreen';
         c.fillRect(0, ZEME_Y - 40, CANVAS_WIDTH, CANVAS_HEIGHT - ZEME_Y + 40);
       }
     </script>
