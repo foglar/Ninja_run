@@ -29,6 +29,8 @@
       var nanonautX = 50;
       var nanonautY = 40;
       
+      window.addEventListener('keydown', onKeyDown)
+      
       window.addEventListener('load', start);
       
       function start() {
@@ -41,6 +43,9 @@
         window.requestAnimationFrame(mainLoop);
       }
       //REAKCE HRÁČE
+      function onKeyDown(event) {
+        console.log(event.keyCode);
+      }
       //AKTUALIZACE
       function update() {
         //AKTUALIZACE NANONAUTA
