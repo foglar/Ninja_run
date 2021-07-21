@@ -12,10 +12,13 @@
       var NANONAUT_HEIGHT = 229;
       var ZEME_Y = 540;
       var NANONAUT_Y_ZRYCHLENI = 1;
+      var MEZERNIK_KOD = 32;
+      var NANONAUT_SKOK_RYCHLOST = 20;
       //NASTAVENÍ
       var canvas = document.createElement('canvas');
       var c = canvas.getContext('2d');
       var nanonautRychlost = 0;
+      var mezernikStisknuty = false;
       canvas.width = CANVAS_WIDTH;
       canvas.height = CANVAS_HEIGHT;
       document.body.appendChild(canvas);
@@ -30,6 +33,7 @@
       var nanonautY = 40;
       
       window.addEventListener('keydown', onKeyDown)
+      window.addEventListener('keyup', onKeyUp);
       
       window.addEventListener('load', start);
       
@@ -44,13 +48,23 @@
       }
       //REAKCE HRÁČE
       function onKeyDown(event) {
-        console.log(event.keyCode);
+        if (event.keyCode === MEZERNIK_KOD) {
+          mezernikStisknuty = true;
+        }
+      }
+      function onKeyUp(event) {
+        if (event.keyCode === MEZERNIK_KOD) {
+          mezernikStisknuty = false;
+        }
       }
       //AKTUALIZACE
       function update() {
+        if (mezernikStisknuty) {
+          nanonautYRychlost = -NANONAUT_SKOK_RYCHLOST;
+        }
         //AKTUALIZACE NANONAUTA
         nanonautY = nanonautY + nanonautRychlost;
-        nanonautRychlost = nanonautRychlost + NANONAUT_Y_ZRYCHLENI
+        nanonautRychlost = nanonautRychlost + NANONAUT_Y_ZRYCHLENI;
         if (nanonautY > (ZEME_Y - NANONAUT_HEIGHT)) {
           nanonautY = ZEME_Y - NANONAUT_HEIGHT;
           nanonautYRychlost = 0;
