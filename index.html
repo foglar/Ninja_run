@@ -32,7 +32,7 @@
       function start() {
         window.requestAnimationFrame(mainLoop);
       }
-      //HLAVNí SMYČKA
+      //HLAVNÍ SMYČKA
       function mainLoop() {
         update();
         draw();
@@ -41,6 +41,11 @@
       //REAKCE HRÁČE
       //AKTUALIZACE
       function update() {
+        //AKTUALIZACE NANONAUTA
+        nanonautY = nanonautY + 1;
+        if (nanonautY > (ZEME_Y - NANONAUT_HEIGHT)) {
+          nanonautY = ZEME_Y - NANONAUT_HEIGHT;
+        }
       }
       //ZOBRAZENÍ
       function draw() {
